@@ -1,0 +1,107 @@
+.container {
+    min-height: 100vh;
+    padding: 2rem;
+    padding-top: 4rem; /* Make room for the logout button */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    color: #374151;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.createButton {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #f9fafb;
+    color: #374151;
+}
+
+.createButton:hover {
+    background-color: #f3f4f6;
+}
+
+.table {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tableHeader {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1.5fr 1fr;
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 600;
+    color: #374151;
+}
+
+.tableRow {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1.5fr 1fr;
+    padding: 1rem;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tableRow:last-child {
+    border-bottom: none;
+}
+
+.tableCell {
+    color: #4b5563;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.actionButton {
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.editButton {
+    color: #1f2937;
+}
+
+.editButton:hover {
+    background-color: #f3f4f6;
+}
+
+.deleteButton {
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+.deleteButton:hover {
+    background-color: #fef2f2;
+}
+
+.noData {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}

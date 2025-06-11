@@ -1,0 +1,41 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.content {
+    background: #ffffff;
+    padding: 2rem 3rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.welcome {
+    font-size: 1.5rem;
+    color: #374151;
+    margin-bottom: 1.5rem;
+}
+
+.profileLink {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #f9fafb;
+    color: #374151;
+    text-decoration: none;
+}
+
+.profileLink:hover {
+    background-color: #f3f4f6;
+}

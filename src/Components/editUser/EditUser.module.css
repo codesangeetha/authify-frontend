@@ -1,0 +1,98 @@
+.container {
+    min-height: 100vh;
+    padding: 2rem;
+    padding-top: 4rem;
+}
+
+.content {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 2rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.title {
+    color: #374151;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.userId {
+    color: #6b7280;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #374151;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #9ca3af;
+    box-shadow: 0 0 0 1px #9ca3af;
+}
+
+.error {
+    color: #dc2626;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #f9fafb;
+    color: #374151;
+    margin-top: 1rem;
+}
+
+.button:hover {
+    background-color: #f3f4f6;
+}
+
+.message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.success {
+    background-color: #ecfdf5;
+    color: #047857;
+}
+
+.error {
+    background-color: #fef2f2;
+    color: #dc2626;
+}

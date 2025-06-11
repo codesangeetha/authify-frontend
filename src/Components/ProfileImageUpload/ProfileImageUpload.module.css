@@ -1,0 +1,95 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.content {
+    background: #ffffff;
+    padding: 2rem 3rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.title {
+    color: #374151;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.uploadArea {
+    margin: 1.5rem 0;
+    padding: 2rem;
+    border: 2px dashed #d1d5db;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    cursor: pointer;
+}
+
+.fileInput {
+    margin-bottom: 1rem;
+}
+
+.selectedFileName {
+    color: #4b5563;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.button {
+    width: 100%;
+    padding: 0.75rem 2rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #f9fafb;
+    color: #374151;
+    margin-top: 1rem;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.button:not(:disabled):hover {
+    background-color: #f3f4f6;
+}
+
+.message {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.success {
+    background-color: #ecfdf5;
+    color: #047857;
+}
+
+.error {
+    background-color: #fef2f2;
+    color: #dc2626;
+}
+
+.backLink {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: #4b5563;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.backLink:hover {
+    text-decoration: underline;
+}
