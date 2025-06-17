@@ -13,7 +13,7 @@ const Profile: React.FC = () => {
   const token = useSelector((state: RootState) => state.auth.token);
 
   useEffect(() => {
-    if(token == ""){
+    if(token == null){
       navigate('/login');
     }
     axiosFn();

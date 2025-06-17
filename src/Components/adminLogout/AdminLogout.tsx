@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import styles from './AdminLogout.module.css';
 import { type AppDispatch } from '../../store/store';
-import { setToken } from '../../store/authSlice';
+import { clearToken } from '../../store/authSlice';
 import { useDispatch } from 'react-redux';
 
 const AdminLogout: React.FC = () => {
@@ -10,7 +10,7 @@ const AdminLogout: React.FC = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     const logout = () => {
-        dispatch(setToken(""));
+        dispatch(clearToken());
         navigate('/adminlogin');
     }
 

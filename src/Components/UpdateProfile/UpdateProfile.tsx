@@ -19,18 +19,22 @@ const UpdateProfile: React.FC = () => {
     const [success, setSuccess] = useState<boolean>(false);
 
     useEffect(() => {
+        if (token == null) {
+            navigate('/login');
+        }
+
         axios.get('http://localhost:5000/api/user/profile', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         })
-        .then((res) => {
-            setName(res.data.username);
-            setEmail(res.data.email);
-        })
-        .catch(() => {
-            setBackendError(true);
-        });
+            .then((res) => {
+                setName(res.data.username);
+                setEmail(res.data.email);
+            })
+            .catch(() => {
+                setBackendError(true);
+            });
     }, [token]);
 
     const nameFn = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,7 +116,7 @@ const UpdateProfile: React.FC = () => {
                         onChange={mailFn}
                         className={styles.input}
                         placeholder="Enter new email"
-                        value={email}  
+                        value={email}
                     />
                     {error2 && <p className={styles.error}>{error2}</p>}
                 </div>
@@ -143,7 +147,7 @@ const UpdateProfile: React.FC = () => {
                     Back to Profile
                 </p>
             </div>
-            <Logout/>
+            <Logout />
         </div>
     )
 }

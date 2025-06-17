@@ -23,6 +23,10 @@ const EditUser: React.FC = () => {
     const token = useSelector((state: RootState) => state.auth.token);
 
     useEffect(() => {
+        if (token == null) {
+            navigate('/adminlogin');
+        }
+
         axios.get(`http://localhost:5000/api/admin/users/${id}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -92,7 +96,7 @@ const EditUser: React.FC = () => {
             <div className={styles.content}>
                 <div className={styles.header}>
                     <h1 className={styles.title}>Edit User</h1>
-                   
+
                 </div>
 
                 <div className={styles.formGroup}>

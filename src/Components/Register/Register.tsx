@@ -113,7 +113,7 @@ const Register: React.FC = () => {
 
                 {backendError &&
                     <div className={`${styles.message} ${styles.error}`}>
-                        Invalid credentials
+                       Email id already exist
                     </div>
                 }
 

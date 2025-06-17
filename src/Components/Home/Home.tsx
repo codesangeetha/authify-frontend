@@ -13,7 +13,7 @@ const Home: React.FC = () => {
     const token = useSelector((state: RootState) => state.auth.token);
 
     useEffect(() => {
-        if(token == ""){
+        if(token == null){
             navigate('/login');
         }
         axiosFn();
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
             .then((res) => {
                 console.log(res.data);
                 setName(res.data.username);
-
+                
             })
             .catch(error => {
                 console.error('Error', error);

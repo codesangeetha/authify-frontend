@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from './CreateUser.module.css';
 
@@ -35,6 +35,13 @@ const CreateUser = () => {
         setPassword(event.target.value);
         setError3("");
     }
+
+ useEffect(() => {
+        if(token == null){
+            navigate('/adminlogin');
+        }
+        
+    }, []);
 
     const createFn = () => {
 

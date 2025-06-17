@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent } from 'react';
+import { useEffect, useState, type ChangeEvent } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import styles from './ProfileImageUpload.module.css';
@@ -25,6 +25,13 @@ const ProfileImageUpload = () => {
             setSelectedFile(null);
         }
     };
+
+useEffect(() => {
+    if(token == null){
+      navigate('/login');
+    }
+  }, []);
+
 
     const handleUpload = (): void => {
         if (!selectedFile) {
