@@ -62,11 +62,16 @@ const Login: React.FC = () => {
                     dispatch(setToken(res.data.token));
                     // setData(res.data);
                     navigate('/home');
-                })                .catch(() => {
+                })
+                .catch(() => {
                     setBackendError(true);
                 })
 
         }
+    }
+
+    const goForgotPwd = () => {
+        navigate('/forgot-password');
     }
 
     return (
@@ -74,9 +79,9 @@ const Login: React.FC = () => {
             <div className={styles.content}>
                 <div className={styles.formGroup}>
                     <label className={styles.label}>Email</label>
-                    <input 
-                        type="email" 
-                        onChange={emailChange} 
+                    <input
+                        type="email"
+                        onChange={emailChange}
                         className={styles.input}
                         placeholder="Enter your email"
                     />
@@ -85,28 +90,30 @@ const Login: React.FC = () => {
 
                 <div className={styles.formGroup}>
                     <label className={styles.label}>Password</label>
-                    <input 
-                        type="password" 
-                        onChange={pwdChange} 
+                    <input
+                        type="password"
+                        onChange={pwdChange}
                         className={styles.input}
                         placeholder="Enter your password"
                     />
                     {error2 && <p className={styles.error}>{error2}</p>}
                 </div>
 
-                {backendError && 
+                {backendError &&
                     <div className={styles.errorMessage}>
                         Invalid credentials
                     </div>
                 }
 
-                <button 
-                    onClick={loginFn} 
+                <button
+                    onClick={loginFn}
                     className={styles.button}
                 >
                     Login
                 </button>
             </div>
+            <p onClick={goForgotPwd} className={styles.backLink} style={{ cursor: "pointer" }}>Forgot password </p>
+
         </div>
     )
 }

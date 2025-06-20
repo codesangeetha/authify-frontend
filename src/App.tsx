@@ -12,6 +12,9 @@ import AdminHome from './Components/adminHome/AdminHome';
 import EditUser from './Components/editUser/EditUser';
 import CreateUser from './Components/createUser/CreateUser';
 import Test from './Components/test/Test';
+import ForgotPassword from './Components/forgotPassword/ForgotPassword';
+import ResetPwd from './Components/resetPassword/ResetPwd';
+import AdminDashboard from './Components/adminDashboard/AdminDashboard';
 
 
 const App: React.FC = () => {
@@ -26,8 +29,12 @@ const App: React.FC = () => {
       <Route path="/profileimageupload" element={<ProfileImageUpload />} />
       <Route path="/adminlogin" element={<AdminLogin />} />
       <Route path="/adminhome" element={<AdminHome />} />
-      <Route path="/edituser/:id" element={<EditUser/>}/>
+      <Route path="/edituser/:id" element={<EditUser />} />
       <Route path="/createuser" element={<CreateUser />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/reset/:token" element={<ResetPwd />} />
+      <Route path="/dashboard" element={<AdminDashboard />} />
+
 
       <Route path="/test" element={<Test />} />
 

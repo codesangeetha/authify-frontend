@@ -18,13 +18,15 @@ const AdminHome: React.FC = () => {
   const [pagination, setPagination] = useState<PaginationData>({ page: 1, totalPages: 1 });
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [limit] = useState<number>(5);
+  const [startDate, setStartDate] = useState<string>("");
+  const [endDate, setEndDate] = useState<string>("");
 
   useEffect(() => {
     if (token == null) {
       navigate("/adminlogin");
     }
     fetchFn();
-  }, [pagination.page, searchQuery]);
+  }, [pagination.page, searchQuery, startDate, endDate]);
 
   const token = useSelector((state: RootState) => state.auth.token);
 
@@ -34,6 +36,12 @@ const AdminHome: React.FC = () => {
     queryParams.append('page', pagination.page.toString());
     if (searchQuery) {
       queryParams.append('search', searchQuery);
+    }
+    if (startDate) {
+      queryParams.append('startDate', startDate);
+    }
+    if (endDate) {
+      queryParams.append('endDate', endDate);
     }
 
     axios.get(`http://localhost:5000/api/admin/users?${queryParams.toString()}`, {
@@ -113,6 +121,22 @@ const AdminHome: React.FC = () => {
           value={searchQuery}
           onChange={handleSearch}
           className={styles.searchInput}
+        />
+        <input
+          type="date"
+          value={startDate}
+          onChange={e => setStartDate(e.target.value)}
+          className={styles.searchInput}
+          style={{ maxWidth: 160, marginLeft: 12 }}
+          placeholder="Start Date"
+        />
+        <input
+          type="date"
+          value={endDate}
+          onChange={e => setEndDate(e.target.value)}
+          className={styles.searchInput}
+          style={{ maxWidth: 160, marginLeft: 8 }}
+          placeholder="End Date"
         />
       </div>
 

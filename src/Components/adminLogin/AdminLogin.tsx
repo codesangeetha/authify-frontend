@@ -61,7 +61,7 @@ const AdminLogin: React.FC = () => {
                     console.log(res.data);
                     dispatch(setToken(res.data.token));
                     // setData(res.data);
-                    navigate('/adminhome');
+                    navigate('/dashboard');
                 }).catch(() => {
                     setBackendError(true);
                 })

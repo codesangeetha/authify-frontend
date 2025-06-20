@@ -9,6 +9,9 @@ const Register: React.FC = () => {
     const [name, setName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const [confirmpwd, setConfirmpwd] = useState<string>("");
+
+    const [confirmError, setConfirmError] = useState<string>("");
 
     const [error1, setError1] = useState<string>("");
     const [error2, setError2] = useState<string>("");
@@ -27,6 +30,11 @@ const Register: React.FC = () => {
     const pwdFn = (event: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(event.target.value);
         setError3("");
+    }
+
+    const confirmChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setConfirmpwd(event.target.value);
+        setConfirmError("");
     }
 
     const goLogin = () => {
@@ -52,6 +60,14 @@ const Register: React.FC = () => {
 
         if (!password) {
             setError3("Please enter Password");
+            hasError = true;
+        }
+
+        if (!confirmpwd) {
+            setConfirmError("Please enter confirm password");
+            hasError = true;
+        } else if (password !== confirmpwd) {
+            setConfirmError("New password and confirm password do not match");
             hasError = true;
         }
 
@@ -111,16 +127,28 @@ const Register: React.FC = () => {
                     {error3 && <p className={styles.error}>{error3}</p>}
                 </div>
 
+                <div className={styles.formGroup}>
+                    <label className={styles.label}>Confirm Password</label>
+                    <input
+                        type="password"
+                        onChange={confirmChange}
+                        className={styles.input}
+                    />
+                    {confirmError && <p className={styles.error}>{confirmError}</p>}
+
+                </div>
+
+
                 {backendError &&
                     <div className={`${styles.message} ${styles.error}`}>
-                       Email id already exist
+                        Email id already exist
                     </div>
                 }
 
                 <button
                     onClick={regFn}
                     className={styles.button}>
-                
+
                     Register
                 </button>
 
